@@ -23,7 +23,7 @@ class UserController extends Controller
         ]);
 
         if($validation->fails())
-            return $validation->errors();
+            return response($validation->errors(), 401);
 
         return $this -> createUser($request);
         
